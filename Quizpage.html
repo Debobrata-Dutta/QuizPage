@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/quizpage.css">
+    <title>Quiz Page</title>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>Quiz Time!</h1>
+    <form id="quiz-form">
+        <div class="question">
+            <label for="q1">Question 1: What is the capital of France?</label>
+            <input type="text" id="q1" name="q1" required>
+        </div>
+
+        <div class="question">
+            <label for="q2">Question 2: Which planet is known as the Red Planet?</label>
+            <select class="opt" id="q2" name="q2" required>
+                <option value="">Select an option</option>
+                <option value="mars">Mars</option>
+                <option value="venus">Venus</option>
+                <option value="jupiter">Jupiter</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>Question 3: What is the capital of Japan?</p>
+            <input type="radio" id="q3a" name="q3" value="tokyo" required>
+            <label for="q3a">Tokyo</label><br>
+            <input type="radio" id="q3b" name="q3" value="beijing" required>
+            <label for="q3b">Beijing</label><br>
+            <input type="radio" id="q3c" name="q3" value="seoul" required>
+            <label for="q3c">Seoul</label>
+        </div>
+
+        <button id="button" type="button" onclick="calculateMarks()">Submit</button>
+    </form>
+
+    <div id="result-container"></div>
+</div>
+
+<script>
+    function calculateMarks() {
+        // Retrieve user's answers
+        const answer1 = document.getElementById('q1').value.toLowerCase();
+        const answer2 = document.getElementById('q2').value.toLowerCase();
+        const answer3 = document.querySelector('input[name="q3"]:checked');
+
+        // Check answers and calculate marks
+        let marks = 0;
+        if (answer1 === 'paris') {
+            marks += 1;
+        }
+
+        if (answer2 === 'mars') {
+            marks += 1;
+        }
+
+        if (answer3 && answer3.value === 'tokyo') {
+            marks += 1;
+        }
+
+        // Display result
+        const resultContainer = document.getElementById('result-container');
+        resultContainer.innerHTML = `Your marks:${marks}/3`;
+    }
+
+</script>
+</body>
+</html>
