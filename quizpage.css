@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: "Exo 2", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+#button{font-family: "Exo 2", sans-serif;}
+#quiz-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+.opt{font-family: "Exo 2", sans-serif;}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #327334;
+}
+button:active {
+    background-color: #e8a253;
+}
+#result-container {
+    margin-top: 20px;
+    font-weight: bold;
+}
